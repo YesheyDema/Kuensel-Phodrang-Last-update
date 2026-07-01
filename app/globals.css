@@ -1,0 +1,155 @@
+/** @format */
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background-image: url("/images/decorative-bg.png");
+  --foreground: #2f1d14;
+  --card: #fcf6ea;
+  --card-foreground: #2f1d14;
+  --popover: #fffaf1;
+  --popover-foreground: #2f1d14;
+  --primary: #c9a962;
+  --primary-foreground: #2f1d14;
+  --secondary: #8a3f2f;
+  --secondary-foreground: #fbe5de;
+  --muted: #efdfc4;
+  --muted-foreground: #6f4d35;
+  --accent: #d9ad3a;
+  --accent-foreground: #3b2400;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: #d8bc92;
+  --input: #d8bc92;
+  --ring: #c9a962;
+  --radius: 0.9rem;
+}
+
+@theme inline {
+  --font-sans:
+    var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-serif: "Cormorant Garamond", "Georgia", serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply text-foreground;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #fafaf8;
+    background-image: var(--background-image);
+    background-size: 600px;
+    background-position: center;
+    background-repeat: repeat;
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  /* Minimal, slick panel surfaces inspired by the reference site
+     - flat, subtle border
+     - small, soft shadow
+     - compact radius
+     - restrained hover lift
+  */
+  :where(div, section, article, form)[class*="border-border"][class*=" p-"],
+  :where(div, section, article, form)[class*="border-border"][class*="bg-background"][class*=" p-"],
+  :where(div, section, article, form)[class*="border-border"][class*="bg-card"][class*=" p-"],
+  :where(div, section, article, form)[class*="bg-white"][class*=" p-"] {
+    border-radius: 0.75rem;
+    border: 1px solid rgba(16, 24, 32, 0.06);
+    background: var(--color-card);
+    box-shadow: 0 6px 18px rgba(16, 24, 32, 0.06);
+    transition: box-shadow 160ms ease, transform 160ms ease, border-color 160ms ease;
+  }
+
+  :where(div, section, article, form)[class*="border-border"][class*=" p-"]:hover,
+  :where(div, section, article, form)[class*="bg-white"][class*=" p-"]:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 30px rgba(16, 24, 32, 0.08);
+  }
+
+  /* Keep the shared Card primitive minimal and consistent */
+  [data-slot="card"] {
+    border-radius: 0.75rem;
+    border: 1px solid rgba(16, 24, 32, 0.06);
+    background: var(--color-card);
+    box-shadow: 0 6px 18px rgba(16, 24, 32, 0.06);
+    transition: box-shadow 160ms ease, transform 160ms ease;
+  }
+
+  [data-slot="card"]:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 30px rgba(16, 24, 32, 0.08);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom selection color */
+::selection {
+  background-color: var(--primary);
+  color: var(--foreground);
+}
+
+/* Improve default readability: stronger weights for headings and emphasis */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  color: var(--foreground);
+  letter-spacing: -0.01em;
+}
+
+p,
+li,
+a,
+span {
+  font-weight: 400;
+}
+
+strong,
+b {
+  font-weight: 600;
+}
