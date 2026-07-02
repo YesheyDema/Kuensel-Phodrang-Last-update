@@ -1,3 +1,5 @@
+/** @format */
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -50,14 +52,10 @@ export function Header() {
                 className="h-12 w-auto object-contain"
               />
               <div className="hidden flex-col transition-transform duration-200 group-hover:scale-[1.02] md:flex">
-                <span
-                  className="font-serif text-xl font-semibold tracking-wide text-secondary-foreground transition-colors"
-                >
+                <span className="font-serif text-xl font-semibold tracking-wide text-secondary-foreground transition-colors">
                   Buddha Dordenma
                 </span>
-                <span
-                  className="text-[10px] uppercase tracking-[0.3em] text-secondary-foreground/70 transition-colors"
-                >
+                <span className="text-[10px] uppercase tracking-[0.3em] text-secondary-foreground/70 transition-colors">
                   Thimphu, Bhutan
                 </span>
               </div>
@@ -87,10 +85,25 @@ export function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden text-xs uppercase tracking-[0.2em] text-secondary-foreground transition-colors"
+              className="relative flex h-9 w-9 shrink-0 flex-col items-center justify-center gap-[5px] md:hidden"
               aria-label="Toggle menu"
+              aria-expanded={isMobileMenuOpen}
             >
-              {isMobileMenuOpen ? "Close" : "Menu"}
+              <span
+                className={`h-px w-6 bg-secondary-foreground transition-all duration-300 ${
+                  isMobileMenuOpen ? "translate-y-[6px] rotate-45" : ""
+                }`}
+              />
+              <span
+                className={`h-px w-6 bg-secondary-foreground transition-all duration-300 ${
+                  isMobileMenuOpen ? "opacity-0" : "opacity-100"
+                }`}
+              />
+              <span
+                className={`h-px w-6 bg-secondary-foreground transition-all duration-300 ${
+                  isMobileMenuOpen ? "-translate-y-[6px] -rotate-45" : ""
+                }`}
+              />
             </button>
           </div>
         </nav>
@@ -110,7 +123,9 @@ export function Header() {
             <div
               key={link.href}
               className="transition-all duration-300"
-              style={{ transitionDelay: isMobileMenuOpen ? `${index * 80}ms` : "0ms" }}
+              style={{
+                transitionDelay: isMobileMenuOpen ? `${index * 80}ms` : "0ms",
+              }}
             >
               <Link
                 href={link.href}

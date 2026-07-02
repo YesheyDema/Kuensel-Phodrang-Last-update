@@ -1,7 +1,10 @@
+/** @format */
+
 "use client";
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
@@ -94,7 +97,7 @@ export default function AboutPage() {
           observer.unobserve(element);
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
     );
 
     revealTargets.forEach((element, index) => {
@@ -114,24 +117,17 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 md:pt-40 md:pb-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div
-            className="max-w-3xl"
-          >
-            <p
-              className="text-xs uppercase tracking-[0.4em] text-primary"
-            >
+          <div className="max-w-3xl">
+            <p className="text-xs uppercase tracking-[0.4em] text-primary">
               The Complete Story
             </p>
-            <h1
-              className="mt-4 font-serif text-5xl font-light leading-tight md:text-6xl lg:text-7xl"
-            >
+            <h1 className="mt-4 font-serif text-5xl font-light leading-tight md:text-6xl lg:text-7xl">
               Buddha Dordenma
             </h1>
-            <p
-              className="mt-6 text-lg leading-relaxed text-muted-foreground md:text-xl"
-            >
-              A monumental achievement fulfilling centuries-old prophecies, 
-              housing 125,000 Buddha statues within its sacred bronze and gold structure.
+            <p className="mt-6 text-lg leading-relaxed text-muted-foreground md:text-xl">
+              A monumental achievement fulfilling centuries-old prophecies,
+              housing 125,000 Buddha statues within its sacred bronze and gold
+              structure.
             </p>
           </div>
         </div>
@@ -140,9 +136,7 @@ export default function AboutPage() {
       {/* Key Figures */}
       <section className="border-y border-border py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div
-            className="grid grid-cols-2 gap-8 md:grid-cols-4"
-          >
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {facts.map((fact) => (
               <div key={fact.label}>
                 <p className="font-serif text-4xl font-light text-primary">
@@ -166,7 +160,7 @@ export default function AboutPage() {
           src="/images/Thimphu%20190723%20by%20Amp%20Sripimanwat-85.jpg"
           alt="Buddha Dordenma statue"
           fill
-          quality={60}
+          quality={50}
           sizes="100vw"
           className="object-cover"
         />
@@ -175,9 +169,7 @@ export default function AboutPage() {
       {/* The Monument Section */}
       <section className="py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div
-            className="mb-16"
-          >
+          <div className="mb-16">
             <p className="text-xs uppercase tracking-[0.4em] text-primary">
               The Monument
             </p>
@@ -186,24 +178,21 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
-            <div
-              className="relative aspect-video overflow-hidden order-2 lg:order-1"
-            >
-              <Image
-                src="/images/Thimphu%20190723%20by%20Amp%20Sripimanwat-83.jpg"
-                alt="Buddha Dordenma monument detail"
-                fill
-                quality={60}
-                loading="lazy"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
+          <div className="grid items-start gap-16 lg:grid-cols-2 lg:gap-24">
+            <div className="order-2 self-start overflow-hidden rounded-2xl lg:sticky lg:top-28 lg:order-1">
+              <div className="relative w-86 h-110 mx-auto rounded-lg overflow-hidden">
+                <Image
+                  src="/images/26.jpg"
+                  alt="Buddha Dordenma monument detail"
+                  fill
+                  quality={85}
+                  loading="lazy"
+                  className="object-contain"
+                />
+              </div>
             </div>
 
-            <div
-              className="order-1 lg:order-2"
-            >
+            <div className="order-1 lg:order-2">
               <h3 className="font-serif text-2xl font-light">
                 Historical Significance
               </h3>
@@ -227,13 +216,15 @@ export default function AboutPage() {
               </h3>
               <div className="mt-6 space-y-4 text-muted-foreground text-sm leading-relaxed">
                 <p>
-                  The wisdom eye of the Buddha is made from diamonds worth 1 million US Dollars, 
-                  while the entire structure is made of bronze and gilded in gold, creating a 
-                  beacon visible from across the entire Thimphu Valley.
+                  The wisdom eye of the Buddha is made from diamonds worth 1
+                  million US Dollars, while the entire structure is made of
+                  bronze and gilded in gold, creating a beacon visible from
+                  across the entire Thimphu Valley.
                 </p>
                 <p>
-                  Australian architects Buro and Structural Engineers Arup HK assisted with 
-                  the project, ensuring modern engineering meets ancient spiritual wisdom.
+                  Australian architects Buro and Structural Engineers Arup HK
+                  assisted with the project, ensuring modern engineering meets
+                  ancient spiritual wisdom.
                 </p>
               </div>
             </div>
@@ -244,9 +235,7 @@ export default function AboutPage() {
       {/* Sacred Interior Section */}
       <section className="bg-muted py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div
-            className="mb-16"
-          >
+          <div className="mb-16">
             <p className="text-xs uppercase tracking-[0.4em] text-primary">
               The Interior
             </p>
@@ -255,28 +244,25 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div
-            className="grid gap-8 md:grid-cols-2"
-          >
-            <div
-              className="border border-border bg-background p-8"
-            >
-              <h3 className="font-serif text-xl">Sacred Interior Configuration</h3>
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="border border-border bg-background p-8">
+              <h3 className="font-serif text-xl">
+                Sacred Interior Configuration
+              </h3>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                The statue houses over 125,000 smaller Buddha statues: 100,000 eight-inch-tall 
-                and 25,000 twelve-inch-tall gilded bronze Buddhas. Each are made of bronze and 
-                gilded in gold.
+                The statue houses over 125,000 smaller Buddha statues: 100,000
+                eight-inch-tall and 25,000 twelve-inch-tall gilded bronze
+                Buddhas. Each are made of bronze and gilded in gold.
               </p>
             </div>
 
-            <div
-              className="border border-border bg-background p-8"
-            >
+            <div className="border border-border bg-background p-8">
               <h3 className="font-serif text-xl">The Bhumisparsha Mudra</h3>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                The Buddha is depicted in the Bhumisparsha Mudra, with the left palm facing 
-                upward and the right hand pointed downward toward the earth, symbolizing his 
-                summoning of the earth to witness his enlightenment.
+                The Buddha is depicted in the Bhumisparsha Mudra, with the left
+                palm facing upward and the right hand pointed downward toward
+                the earth, symbolizing his summoning of the earth to witness his
+                enlightenment.
               </p>
             </div>
           </div>
@@ -288,9 +274,7 @@ export default function AboutPage() {
       {/* Timeline Section */}
       <section id="timeline" className="py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div
-            className="mb-16"
-          >
+          <div className="mb-16">
             <p className="text-xs uppercase tracking-[0.4em] text-primary">
               Through the Ages
             </p>
@@ -298,7 +282,10 @@ export default function AboutPage() {
               From Prophecy to Presence
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
-              The story of Buddha Dordenma spans centuries of vision, prophecy, and devotion. From ancient foretellings to the 169 feet tall monument that now overlooks Thimphu, each milestone shaped the sacred presence that stands today.
+              The story of Buddha Dordenma spans centuries of vision, prophecy,
+              and devotion. From ancient foretellings to the 169 feet tall
+              monument that now overlooks Thimphu, each milestone shaped the
+              sacred presence that stands today.
             </p>
           </div>
 
@@ -401,9 +388,9 @@ export default function AboutPage() {
                   {"\u201C"}
                 </span>
                 <p className="relative max-w-3xl text-base italic leading-relaxed text-[#322522] sm:text-lg">
-                  The sole purpose of building this statue is to pacify inauspicious
-                  causes such as war and disease in all countries of the world and to
-                  foster conditions of harmony and peace.
+                  The sole purpose of building this statue is to pacify
+                  inauspicious causes such as war and disease in all countries
+                  of the world and to foster conditions of harmony and peace.
                 </p>
                 <footer className="mt-4 flex items-center gap-3">
                   <div className="h-px flex-1 bg-[#d8c1a0]" />
@@ -414,26 +401,239 @@ export default function AboutPage() {
               </blockquote>
 
               <p className="mt-8 max-w-3xl text-[0.95rem] leading-relaxed text-[#fff7f0] sm:text-[1.02rem]">
-                The vision for the Buddha Dordenma statue was first conceived by His
-                Eminence Thrizin Rinpoche Tshering Wangdi, Chairman of the Menjong
-                Choethuen Tshogpa. Entrusted by His Holiness the 70th Je Khenpo,
-                Truelku Jigme Choeda, Rinpoche undertook this monumental project to
-                fulfill sacred prophecies and ensure the spiritual and temporal
-                well-being of the Kingdom of Bhutan.
+                The vision for the Buddha Dordenma statue was first conceived by
+                His Eminence Thrizin Rinpoche Tshering Wangdi, Chairman of the
+                Menjong Choethuen Tshogpa. Entrusted by His Holiness the 70th Je
+                Khenpo, Truelku Jigme Choeda, Rinpoche undertook this monumental
+                project to fulfill sacred prophecies and ensure the spiritual
+                and temporal well-being of the Kingdom of Bhutan.
               </p>
 
               <p className="mt-8 max-w-3xl text-[0.95rem] leading-relaxed text-[#fff7f0] sm:text-[1.02rem]">
                 Born in the Wood Male Horse Year in 1954 on Saga Dawa, Thrizin
-                Rinpoche&apos;s life has been dedicated to the Dharma. He was formally
-                included among the celibate monks by the 65th Je Khenpo Yeshey
-                Singye and served the monastic community for seventeen years.
-                Following a three-year, three-month retreat, he was appointed as
-                Chairman of the Menjong Choethuen Tshogpa, leading numerous
-                philanthropic and religious projects, including the construction of
-                the Buddha Dordenma.
+                Rinpoche&apos;s life has been dedicated to the Dharma. He was
+                formally included among the celibate monks by the 65th Je Khenpo
+                Yeshey Singye and served the monastic community for seventeen
+                years. Following a three-year, three-month retreat, he was
+                appointed as Chairman of the Menjong Choethuen Tshogpa, leading
+                numerous philanthropic and religious projects, including the
+                construction of the Buddha Dordenma.
               </p>
-
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Je Khenpo Section */}
+      <section id="je-khenpo" className="py-24 md:py-32 scroll-mt-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-[320px_minmax(0,1fr)] lg:gap-16 items-start">
+            <div>
+              <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-[0_18px_45px_rgba(47,29,20,0.08)]">
+                <div className="p-4 sm:p-5">
+                  <div className="relative aspect-4/5 overflow-hidden rounded-xl bg-muted">
+                    <Image
+                      src="/images/je-khenpo.png"
+                      alt="His Holiness the 70th Je Khenpo, Chabje Trulku Jigme Chhoeda"
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 1024px) 100vw, 320px"
+                    />
+                  </div>
+
+                  <div className="px-2 pb-2 pt-6 text-center">
+                    <h3 className="font-serif text-xl font-semibold text-foreground">
+                      His Holiness the Je Khenpo
+                    </h3>
+                    <p className="mt-2 text-sm font-medium text-primary">
+                      Chabje Trulku Jigme Chhoeda
+                    </p>
+                    <div className="mt-5 flex flex-wrap justify-center gap-2">
+                      <span className="rounded-full border border-border bg-muted px-3 py-1.5 text-xs font-semibold tracking-wide text-muted-foreground">
+                        70th Je Khenpo
+                      </span>
+                      <span className="rounded-full border border-border bg-muted px-3 py-1.5 text-xs font-semibold tracking-wide text-muted-foreground">
+                        Enthroned 1996
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <p className="text-xs uppercase tracking-[0.4em] text-primary">
+                Spiritual Guardian
+              </p>
+              <h2 className="mt-4 font-serif text-3xl font-light md:text-4xl">
+                His Holiness the Je Khenpo
+              </h2>
+              <div className="mt-6 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                <p>
+                  Respectfully addressed in Bhutan as Chapjey, the Je Khenpo is
+                  the Chief Abbot of the Central Monastic Body and the senior
+                  religious hierarch of the Kingdom. His role embodies the
+                  spiritual heart of Bhutan, guiding the nation’s monastic
+                  community and safeguarding its Dharma traditions.
+                </p>
+                <p>
+                  Alongside His Majesty the King, the Je Khenpo is the only
+                  figure in Bhutan entitled to wear the saffron-coloured kabney,
+                  a mark of his position as the nation&apos;s foremost spiritual
+                  authority. This distinction marks his position as the nation’s
+                  foremost spiritual authority, symbolizing both his
+                  responsibility and his revered status.
+                </p>
+                <p>
+                  The Buddha Dordenma stands today with the sanction of His
+                  Holiness the 70th Je Khenpo, Chabje Trulku Jigme Chhoeda,
+                  whose blessing, together with royal approval allowed the
+                  ancient prophecy of Wangpar Tsam to move from vision to
+                  groundbreaking in 2005.
+                </p>
+                <p>
+                  Through his continued guidance, Kuenselphodrang remains first
+                  and foremost a living centre of Dharma and devotion. The Je
+                  Khenpo’s presence ensures that the site is not only a monument
+                  of prophecy but also a sanctuary where spiritual practice
+                  thrives under the highest religious authority of Bhutan.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* His Majesty the King Section */}
+      <section
+        id="his-majesty"
+        className="bg-muted py-24 md:py-32 scroll-mt-24"
+      >
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-16 items-start">
+            <div className="lg:order-1">
+              <p className="text-xs uppercase tracking-[0.4em] text-primary">
+                Royal Patronage
+              </p>
+              <h2 className="mt-4 font-serif text-3xl font-light md:text-4xl">
+                His Majesty The Fifth King
+              </h2>
+              <div className="mt-6 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                <p>
+                  His Majesty King Jigme Khesar Namgyel Wangchuck, the Fifth
+                  Druk Gyalpo of Bhutan, carries forward the royal patronage
+                  that first blessed the Buddha Dordenma at its groundbreaking
+                  under His Majesty the Fourth Druk Gyalpo in 2005. His
+                  leadership continues to embody the vision of peace and
+                  spiritual prosperity that the monument represents.
+                </p>
+                <p>
+                  Reigning since December 2006 and formally crowned in November
+                  2008, His Majesty is warmly regarded by the Bhutanese people
+                  as the &quot;People&apos;s King.&quot; His reign has been
+                  marked by compassion, humility, and a deep commitment to the
+                  welfare of the nation, strengthening the bond between the
+                  Golden Throne and the people.
+                </p>
+                <p>
+                  The devotion of the Royal Family to Kuenselphodrang is woven
+                  into the site itself. The surrounding Kuenselphodrang Nature
+                  Park was formally opened in 2011 in celebration of the Royal
+                  Wedding of His Majesty the Fifth King and Her Majesty The
+                  Gyaltsuen Jetsun Pema Wangchuck. This act forever linked the
+                  sanctuary to the joy and blessings of the Golden Throne,
+                  making the Buddha Dordenma not only a monument of prophecy but
+                  also a living testament to Bhutan’s royal legacy.
+                </p>
+              </div>
+            </div>
+
+            <div className="lg:order-2">
+              <div className="overflow-hidden rounded-2xl border border-border bg-background shadow-[0_18px_45px_rgba(47,29,20,0.08)]">
+                <div className="p-4 sm:p-5">
+                  <div className="relative aspect-4/5 overflow-hidden rounded-xl bg-muted">
+                    <Image
+                      src="/images/king-jigme-khesar.png"
+                      alt="His Majesty King Jigme Khesar Namgyel Wangchuck, the Fifth Druk Gyalpo of Bhutan"
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 1024px) 100vw, 320px"
+                    />
+                  </div>
+
+                  <div className="px-2 pb-2 pt-6 text-center">
+                    <h3 className="font-serif text-xl font-semibold text-foreground">
+                      Jigme Khesar Namgyel Wangchuck
+                    </h3>
+                    <p className="mt-2 text-sm font-medium text-primary">
+                      The Fifth Druk Gyalpo
+                    </p>
+                    <div className="mt-5 flex flex-wrap justify-center gap-2">
+                      <span className="rounded-full border border-border bg-muted px-3 py-1.5 text-xs font-semibold tracking-wide text-muted-foreground">
+                        Crowned 2008
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Statues of Devotion Section */}
+      <section id="statues" className="py-24 md:py-32 scroll-mt-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mb-16 text-center">
+            <p className="text-xs uppercase tracking-[0.4em] text-primary">
+              Statues of Devotion
+            </p>
+            <h2 className="mt-4 font-serif text-4xl font-light md:text-5xl">
+              A Sanctuary That Continues to Grow
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+              Enshrined within the Buddha Dordenma are 125,000 smaller Buddha
+              statues, each a gesture of faith offered by devotees near and far.
+              This sacred number is not the end of the story—further statues
+              continue to be offered by pilgrims and well-wishers, adding to the
+              sanctuary for generations to come.
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            <div className="border border-border bg-card p-8">
+              <div className="h-1 w-10 bg-primary/60" />
+              <h3 className="mt-5 font-serif text-2xl">100,000 Statues</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                Eight-inch gilded bronze Buddhas currently enshrined within the
+                meditation hall.
+              </p>
+            </div>
+            <div className="border border-border bg-card p-8">
+              <div className="h-1 w-10 bg-primary/60" />
+              <h3 className="mt-5 font-serif text-2xl">25,000 Statues</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                Twelve-inch gilded bronze Buddhas enshrined alongside them,
+                together forming the 125,000 currently housed within the statue.
+              </p>
+            </div>
+            <div className="border border-border bg-card p-8">
+              <div className="h-1 w-10 bg-primary/60" />
+              <h3 className="mt-5 font-serif text-2xl">Ongoing Offerings</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                Additional statues continue to be offered by devotees and will
+                be added to the sanctuary over time as future blessings unfold.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-16 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <Link
+              href="/donate"
+              className="bg-primary px-8 py-4 text-sm font-medium tracking-wide text-primary-foreground transition-all hover:bg-primary/90"
+            >
+              Offer a Statue
+            </Link>
           </div>
         </div>
       </section>
@@ -451,9 +651,7 @@ export default function AboutPage() {
         <div className="pointer-events-none absolute inset-0 bg-[#faf6ef]/80" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-            <div
-              className="relative aspect-4/3 overflow-hidden rounded-2xl border border-white/50 shadow-[0_18px_50px_rgba(0,0,0,0.12)]"
-            >
+            <div className="relative aspect-4/3 overflow-hidden rounded-2xl border border-white/50 shadow-[0_18px_50px_rgba(0,0,0,0.12)]">
               <Image
                 src="/images/Thimphu%20190723%20by%20Amp%20Sripimanwat-54.jpg"
                 alt="Kuenselphodrang Nature Park"
@@ -464,9 +662,7 @@ export default function AboutPage() {
               />
             </div>
 
-            <div
-              className="relative"
-            >
+            <div className="relative">
               <p className="text-xs uppercase tracking-[0.4em] text-primary">
                 The Grounds
               </p>

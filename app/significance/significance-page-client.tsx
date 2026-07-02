@@ -1,3 +1,5 @@
+/** @format */
+
 "use client";
 
 import { useState } from "react";
@@ -103,7 +105,7 @@ const ritualSchedule = [
     symbol: "◌",
     description:
       "During auspicious days, devotees offer butter lamps as a gesture of wisdom, compassion, and merit.",
-    note:"Butter lamp offering: Nu. 100.",
+    note: "Butter lamp offering: Nu. 100.",
   },
 ];
 
@@ -125,8 +127,7 @@ const participationActions = [
   {
     id: "prayer",
     title: "Send a Prayer",
-    description:
-      "A whispered blessing floats upward, then fades into the sky.",
+    description: "A whispered blessing floats upward, then fades into the sky.",
     label: "Send",
   },
 ] as const;
@@ -178,39 +179,30 @@ export default function SignificancePage() {
   return (
     <main className="bg-background">
       <Header />
-        {/* Hero Section */}
+      {/* Hero Section */}
       <section className="relative pt-32 pb-24 md:pt-40 md:pb-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div
-            className="max-w-3xl"
-          >
-            <p
-              className="text-xs uppercase tracking-[0.4em] text-primary"
-            >
+          <div className="max-w-3xl">
+            <p className="text-xs uppercase tracking-[0.4em] text-primary">
               Spiritual Significance
             </p>
-            <h1
-              className="mt-4 font-serif text-5xl font-light leading-tight md:text-6xl lg:text-7xl"
-            >
+            <h1 className="mt-4 font-serif text-5xl font-light leading-tight md:text-6xl lg:text-7xl">
               The Sacred Structure
             </h1>
-            <p
-              className="mt-6 text-lg leading-relaxed text-muted-foreground md:text-xl"
-            >
-              A living sanctuary housing 125,000 Buddha statues, fulfilling 
-              ancient prophecies and embodying the deepest teachings of Buddhism.
+            <p className="mt-6 text-lg leading-relaxed text-muted-foreground md:text-xl">
+              A living sanctuary housing 125,000 Buddha statues, fulfilling
+              ancient prophecies and embodying the deepest teachings of
+              Buddhism.
             </p>
           </div>
         </div>
       </section>
 
-       {/* The Sacred Mudra Section */}
+      {/* The Sacred Mudra Section */}
       <section className="border-t border-border py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-            <div
-              className="relative aspect-square overflow-hidden order-2 lg:order-1"
-            >
+            <div className="relative aspect-square overflow-hidden order-2 lg:order-1">
               <Image
                 src="/images/Big%20Buddha%20from%20Northside%20%20DOT%20AA%20Original%20Bhutan%20Travels.jpg"
                 alt="Buddha Dordenma in Bhumisparsha Mudra"
@@ -222,9 +214,7 @@ export default function SignificancePage() {
               />
             </div>
 
-            <div
-              className="order-1 lg:order-2"
-            >
+            <div className="order-1 lg:order-2">
               <p className="text-xs uppercase tracking-[0.4em] text-primary">
                 The Sacred Gesture
               </p>
@@ -234,22 +224,20 @@ export default function SignificancePage() {
               <div className="mt-6 space-y-4 text-sm text-muted-foreground leading-relaxed">
                 <p>
                   The Great Buddha Dordenma is depicted in the Bhumisparsha
-                  Mudra, meaning &quot;earth-touching gesture.&quot; The left palm faces
-                  upward in meditation, while the right hand points downward
-                  toward the earth.
+                  Mudra, meaning &quot;earth-touching gesture.&quot; The left
+                  palm faces upward in meditation, while the right hand points
+                  downward toward the earth.
                 </p>
                 <p>
-                  This sacred gesture symbolizes the moment of Buddha Shakyamuni's 
-                  enlightenment, when he summoned the earth goddess to witness 
-                  his achievement after overcoming the demon Mara.
+                  This sacred gesture symbolizes the moment of Buddha
+                  Shakyamuni's enlightenment, when he summoned the earth goddess
+                  to witness his achievement after overcoming the demon Mara.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-    
 
       {/* Events & Rituals Section */}
       <section className="relative overflow-hidden border-y border-border py-24 md:py-32">
@@ -267,54 +255,84 @@ export default function SignificancePage() {
               Events &amp; Rituals
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
-              Experience the sacred traditions and spiritual practices that take place at Kuensel Phodrang throughout the year.
+              Experience the sacred traditions and spiritual practices that take
+              place at Kuensel Phodrang throughout the year.
             </p>
           </div>
 
           <div className="mt-14 grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
-            <div className="border border-border bg-background p-6 sm:p-8 lg:p-10">
-              <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
-                <div className="flex items-start gap-4">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-primary/15 bg-primary/10 text-lg text-primary shadow-sm">
-                    ◎
+            <div className="overflow-hidden border border-border bg-background">
+              <div className="relative h-56 w-full sm:h-64">
+                <Image
+                  src="/real/WhatsApp%20Image%202026-05-08%20at%206.16.51%20PM.jpeg"
+                  alt="Buddha Dordenma illuminated at dusk during evening prayer"
+                  fill
+                  quality={65}
+                  loading="lazy"
+                  sizes="(max-width: 1024px) 100vw, 60vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-[#2a150f]/70 via-[#2a150f]/10 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-white backdrop-blur">
+                    Annual Gathering
                   </div>
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.35em] text-primary/90">
-                      Annual Highlight
-                    </p>
-                    <h3 className="mt-2 font-serif text-2xl font-light md:text-3xl">
-                      Global Peace Prayer
-                    </h3>
-                    <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                      Conducted annually, this gathering unites communities in prayer for world harmony, shared merit, and collective compassion.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="rounded-full border border-primary/15 bg-primary/10 px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-primary">
-                  Annual Gathering
                 </div>
               </div>
 
-              <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                <div className="rounded-2xl border border-border bg-muted/35 p-4">
-                  <p className="text-[0.65rem] uppercase tracking-[0.3em] text-primary">Focus</p>
-                  <p className="mt-3 text-sm text-muted-foreground">Peace, compassion, and shared merit</p>
-                </div>
-                <div className="rounded-2xl border border-border bg-muted/35 p-4">
-                  <p className="text-[0.65rem] uppercase tracking-[0.3em] text-primary">Practice</p>
-                  <p className="mt-3 text-sm text-muted-foreground">Prayers led with the monastic body</p>
-                </div>
-                <div className="rounded-2xl border border-border bg-muted/35 p-4">
-                  <p className="text-[0.65rem] uppercase tracking-[0.3em] text-primary">Season</p>
-                  <p className="mt-3 text-sm text-muted-foreground">Held on auspicious annual dates</p>
+              <div className="p-6 sm:p-8 lg:p-10">
+                <h3 className="mt-3 font-serif text-2xl font-light text-white md:text-3xl">
+                  Global Peace Prayer
+                </h3>
+                <hr className="my-2 border-primary/40" />
+                <p className="mt-3 text-xs uppercase tracking-[0.35em] text-primary/90">
+                  Annual Highlight
+                </p>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                  Conducted annually beneath the gaze of the Great Buddha, the
+                  Global Peace Prayer unites monks, devotees, and visitors from
+                  across the world in a single voice of prayer. As dusk settles
+                  over Kuenselphodrang and the statue is lit against the evening
+                  sky, the gathering calls for world harmony, shared merit, and
+                  the collective compassion the Buddha Dordenma was built to
+                  embody.
+                </p>
+
+                <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                  <div className="rounded-2xl border border-border bg-muted/35 p-4">
+                    <p className="text-[0.65rem] uppercase tracking-[0.3em] text-primary">
+                      Focus
+                    </p>
+                    <p className="mt-3 text-sm text-muted-foreground">
+                      Peace, compassion, and shared merit
+                    </p>
+                  </div>
+                  <div className="rounded-2xl border border-border bg-muted/35 p-4">
+                    <p className="text-[0.65rem] uppercase tracking-[0.3em] text-primary">
+                      Practice
+                    </p>
+                    <p className="mt-3 text-sm text-muted-foreground">
+                      Prayers led with the monastic body
+                    </p>
+                  </div>
+                  <div className="rounded-2xl border border-border bg-muted/35 p-4">
+                    <p className="text-[0.65rem] uppercase tracking-[0.3em] text-primary">
+                      Season
+                    </p>
+                    <p className="mt-3 text-sm text-muted-foreground">
+                      Held on auspicious annual dates
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
               {ritualSchedule.map((ritual) => (
-                <article key={ritual.title} className="border border-border bg-background p-6 sm:p-7">
+                <article
+                  key={ritual.title}
+                  className="border border-border bg-background p-6 sm:p-7"
+                >
                   <div className="flex items-start gap-4">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-primary/15 bg-primary/10 text-sm text-primary shadow-sm">
                       {ritual.symbol}
@@ -341,14 +359,10 @@ export default function SignificancePage() {
         </div>
       </section>
 
-     
-
       {/* The Prophecies Section */}
       <section className="bg-muted py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div
-            className="mb-16"
-          >
+          <div className="mb-16">
             <p className="text-xs uppercase tracking-[0.4em] text-primary">
               Fulfillment of Prophecy
             </p>
@@ -357,28 +371,29 @@ export default function SignificancePage() {
             </h2>
           </div>
 
-          <div
-            className="grid gap-8 md:grid-cols-2"
-          >
-            <div
-              className="border border-border bg-background p-8"
-            >
-              <h3 className="font-serif text-xl">Guru Rinpoche (8th Century)</h3>
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="border border-border bg-background p-8">
+              <h3 className="font-serif text-xl">
+                Guru Rinpoche (8th Century)
+              </h3>
               <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-                Ancient terma texts prophesied: <em>&quot;A Shakyamuni statue would
-                be built between Wong and Paro, to bestow blessings of peace and 
-                harmony.&quot;</em> Rediscovered by Terton Pema Lingpa (1450-1521), 
-                revealing the sacred destiny of this site.
+                Ancient terma texts prophesied:{" "}
+                <em>
+                  &quot;A Shakyamuni statue would be built between Wong and
+                  Paro, to bestow blessings of peace and harmony.&quot;
+                </em>{" "}
+                Rediscovered by Terton Pema Lingpa (1450-1521), revealing the
+                sacred destiny of this site.
               </p>
             </div>
 
-            <div
-              className="border border-border bg-background p-8"
-            >
-              <h3 className="font-serif text-xl">Yogi Sonam Zangpo (20th Century)</h3>
+            <div className="border border-border bg-background p-8">
+              <h3 className="font-serif text-xl">
+                Yogi Sonam Zangpo (20th Century)
+              </h3>
               <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-                Prophesied a great statue would be built to impart blessings, 
-                peace, and happiness to the entire world. Buddha Dordenma 
+                Prophesied a great statue would be built to impart blessings,
+                peace, and happiness to the entire world. Buddha Dordenma
                 fulfilled both ancient prophecies simultaneously.
               </p>
             </div>
@@ -401,15 +416,16 @@ export default function SignificancePage() {
           <div className="grid gap-8 lg:grid-cols-[1fr_1.15fr] lg:items-stretch">
             <div className="border border-border bg-background p-8 sm:p-10">
               <p className="text-xs uppercase tracking-[0.35em] text-primary/90">
-                Touch the offering
+                Make an Offering
               </p>
               <h3 className="mt-3 font-serif text-3xl font-light">
-                A quiet interaction with motion
+                A Small Gesture of Devotion
               </h3>
               <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
-                Tap an offering to light a lamp, present a khadar, or release a
-                prayer into the air. The animations stay soft and restrained so
-                the ritual still feels calm.
+                Choose an offering below to light a butter lamp, present a
+                khadar, or send a prayer skyward. Each gesture is rendered
+                gently and unhurriedly, reflecting the same quiet reverence
+                observed by pilgrims at the sanctuary itself.
               </p>
 
               <div className="mt-8 grid gap-4">
@@ -429,7 +445,11 @@ export default function SignificancePage() {
                       }`}
                     >
                       <span className="mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary/15 bg-primary/10 text-sm text-primary">
-                        {action.label === "Light" ? "◌" : action.label === "Offer" ? "▭" : "✦"}
+                        {action.label === "Light"
+                          ? "◌"
+                          : action.label === "Offer"
+                            ? "▭"
+                            : "✦"}
                       </span>
                       <span className="min-w-0 flex-1">
                         <span className="block font-serif text-lg font-light text-foreground">
@@ -454,7 +474,11 @@ export default function SignificancePage() {
                     Interactive Offering
                   </p>
                   <p className="mt-3 text-sm text-muted-foreground">
-                    {participationActions.find((action) => action.id === activeMode)?.description}
+                    {
+                      participationActions.find(
+                        (action) => action.id === activeMode,
+                      )?.description
+                    }
                   </p>
                 </div>
 
@@ -478,13 +502,24 @@ export default function SignificancePage() {
                               "0 0 0 0 rgba(217,173,58,0)",
                             ],
                           }}
-                          transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+                          transition={{
+                            duration: 1.6,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                          }}
                           className="flex h-32 w-32 items-center justify-center rounded-full border border-primary/15 bg-primary/5"
                         >
                           <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-[#b5762b]/12">
                             <motion.div
-                              animate={{ scale: [0.92, 1, 0.94], opacity: [0.75, 1, 0.82] }}
-                              transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+                              animate={{
+                                scale: [0.92, 1, 0.94],
+                                opacity: [0.75, 1, 0.82],
+                              }}
+                              transition={{
+                                duration: 1.4,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                              }}
                               className="h-9 w-9 rounded-[60%_60%_48%_48%/70%_70%_30%_30%] bg-linear-to-b from-[#ffd884] via-[#f6b93b] to-[#b96a14] shadow-[0_0_20px_rgba(246,185,59,0.35)]"
                             />
                           </div>
@@ -507,8 +542,16 @@ export default function SignificancePage() {
                         className="relative flex w-full items-center justify-center"
                       >
                         <motion.div
-                          animate={{ x: [0, 5, 0], y: [0, -3, 0], rotate: [0, 1, 0] }}
-                          transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
+                          animate={{
+                            x: [0, 5, 0],
+                            y: [0, -3, 0],
+                            rotate: [0, 1, 0],
+                          }}
+                          transition={{
+                            duration: 3.2,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                          }}
                           className="relative h-40 w-[84%] max-w-lg"
                         >
                           <div className="absolute inset-x-8 top-1/2 h-px bg-primary/10" />
@@ -549,13 +592,25 @@ export default function SignificancePage() {
                             {floatingPrayers.map((prayer) => (
                               <motion.p
                                 key={prayer.id}
-                                initial={{ opacity: 0, y: 30, x: prayer.x, scale: 0.98 }}
-                                animate={{ opacity: [0, 1, 1, 0], y: -150, x: prayer.x, scale: 1 }}
+                                initial={{
+                                  opacity: 0,
+                                  y: 30,
+                                  x: prayer.x,
+                                  scale: 0.98,
+                                }}
+                                animate={{
+                                  opacity: [0, 1, 1, 0],
+                                  y: -150,
+                                  x: prayer.x,
+                                  scale: 1,
+                                }}
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 2.8, ease: "easeOut" }}
                                 onAnimationComplete={() => {
                                   setFloatingPrayers((current) =>
-                                    current.filter((item) => item.id !== prayer.id)
+                                    current.filter(
+                                      (item) => item.id !== prayer.id,
+                                    ),
                                   );
                                 }}
                                 className="absolute left-1/2 bottom-12 max-w-60 -translate-x-1/2 rounded-full border border-primary/15 bg-white/80 px-4 py-2 text-center text-sm text-foreground shadow-[0_10px_28px_rgba(0,0,0,0.08)] backdrop-blur"
@@ -568,8 +623,15 @@ export default function SignificancePage() {
 
                         <div className="relative z-10 flex flex-col items-center gap-3 text-center">
                           <motion.div
-                            animate={{ scale: [1, 1.03, 1], opacity: [0.72, 1, 0.8] }}
-                            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                            animate={{
+                              scale: [1, 1.03, 1],
+                              opacity: [0.72, 1, 0.8],
+                            }}
+                            transition={{
+                              duration: 2,
+                              repeat: Infinity,
+                              ease: "easeInOut",
+                            }}
                             className="flex h-24 w-24 items-center justify-center rounded-full border border-primary/15 bg-primary/5"
                           >
                             <span className="text-2xl text-primary">✦</span>
@@ -616,9 +678,9 @@ export default function SignificancePage() {
             <div className="border border-border bg-background p-8">
               <h3 className="font-serif text-xl">The Zhung Dratshang</h3>
               <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-                The Monastic Body (Zhung Dratshang) plays a crucial role in 
-                daily rituals, annual ceremonies, and the perpetual preservation 
-                of this sacred site. They are the spiritual guardians ensuring 
+                The Monastic Body (Zhung Dratshang) plays a crucial role in
+                daily rituals, annual ceremonies, and the perpetual preservation
+                of this sacred site. They are the spiritual guardians ensuring
                 the Buddha's blessings flow continuously to all beings.
               </p>
             </div>
@@ -627,7 +689,7 @@ export default function SignificancePage() {
               <h3 className="font-serif text-xl">The Inner Sanctum</h3>
               <div className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <p>
-                  Five stories of temple rooms include the Kunrig Lhakhang and 
+                  Five stories of temple rooms include the Kunrig Lhakhang and
                   Medicine Buddha Temple, housing:
                 </p>
                 <ul className="list-disc list-inside space-y-2">
@@ -643,9 +705,9 @@ export default function SignificancePage() {
           <div className="mt-8 border border-border bg-background p-8">
             <h3 className="font-serif text-xl">Dedication of Merit</h3>
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-              All rituals at Buddha Dordenma are dedicated to the enlightenment 
-              of all sentient beings, the long life of the Royal Family, and 
-              the flourishing of the dual system of Dharma and democratic governance 
+              All rituals at Buddha Dordenma are dedicated to the enlightenment
+              of all sentient beings, the long life of the Royal Family, and the
+              flourishing of the dual system of Dharma and democratic governance
               in Bhutan.
             </p>
           </div>
@@ -655,9 +717,7 @@ export default function SignificancePage() {
       {/* Interior Structure Section */}
       <section className="py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div
-            className="mb-16"
-          >
+          <div className="mb-16">
             <p className="text-xs uppercase tracking-[0.4em] text-primary">
               The Five-Story Sanctuary
             </p>
@@ -668,10 +728,7 @@ export default function SignificancePage() {
 
           <div className="space-y-8">
             {floors.map((floor, index) => (
-              <div
-                key={floor.name}
-                className="border border-border p-8"
-              >
+              <div key={floor.name} className="border border-border p-8">
                 <div className="flex items-start gap-6">
                   <span className="font-serif text-3xl font-light text-primary/40">
                     {String(index + 1).padStart(2, "0")}
@@ -699,9 +756,7 @@ export default function SignificancePage() {
       {/* Twelve Deeds Section */}
       <section className="bg-muted py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div
-            className="mb-16"
-          >
+          <div className="mb-16">
             <p className="text-xs uppercase tracking-[0.4em] text-primary">
               The Life of Buddha
             </p>
@@ -710,9 +765,7 @@ export default function SignificancePage() {
             </h2>
           </div>
 
-          <div
-            className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
-          >
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {twelveDeeds.map((deed, index) => (
               <div
                 key={deed}

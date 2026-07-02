@@ -1,3 +1,5 @@
+/** @format */
+
 import Link from "next/link";
 
 const navLinks = [
@@ -15,6 +17,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand */}
           <div>
+            v
             <h3
               className="font-serif text-2xl font-semibold"
               style={{ color: "#d9ad3a" }}
@@ -88,6 +91,9 @@ export function Footer() {
 
         <div className="mt-12 border-t border-secondary-foreground/10 pt-8">
           <p className="text-center text-xs text-secondary-foreground/50">
+            Developed by Yeshey Dema
+          </p>
+          <p className="mt-4 text-center text-xs text-secondary-foreground/50">
             Under the stewardship of the Central Monastic Body of Bhutan since
             June 26, 2019
           </p>
