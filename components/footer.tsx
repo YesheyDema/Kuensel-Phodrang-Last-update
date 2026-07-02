@@ -17,7 +17,6 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand */}
           <div>
-            v
             <h3
               className="font-serif text-2xl font-semibold"
               style={{ color: "#d9ad3a" }}
