@@ -424,159 +424,31 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Je Khenpo Section */}
-      <section id="je-khenpo" className="py-24 md:py-32 scroll-mt-24">
+      {/* Leadership & Patronage Teaser */}
+      <section className="py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-[320px_minmax(0,1fr)] lg:gap-16 items-start">
-            <div>
-              <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-[0_18px_45px_rgba(47,29,20,0.08)]">
-                <div className="p-4 sm:p-5">
-                  <div className="relative aspect-4/5 overflow-hidden rounded-xl bg-muted">
-                    <Image
-                      src="/images/je-khenpo.png"
-                      alt="His Holiness the 70th Je Khenpo, Chabje Trulku Jigme Chhoeda"
-                      fill
-                      className="object-cover object-center"
-                      sizes="(max-width: 1024px) 100vw, 320px"
-                    />
-                  </div>
-
-                  <div className="px-2 pb-2 pt-6 text-center">
-                    <h3 className="font-serif text-xl font-semibold text-foreground">
-                      His Holiness the Je Khenpo
-                    </h3>
-                    <p className="mt-2 text-sm font-medium text-primary">
-                      Chabje Trulku Jigme Chhoeda
-                    </p>
-                    <div className="mt-5 flex flex-wrap justify-center gap-2">
-                      <span className="rounded-full border border-border bg-muted px-3 py-1.5 text-xs font-semibold tracking-wide text-muted-foreground">
-                        70th Je Khenpo
-                      </span>
-                      <span className="rounded-full border border-border bg-muted px-3 py-1.5 text-xs font-semibold tracking-wide text-muted-foreground">
-                        Enthroned 1996
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+          <div className="grid gap-10 overflow-hidden rounded-3xl border border-border bg-card p-10 md:grid-cols-[1.3fr_auto] md:items-center md:gap-14 md:p-14">
             <div>
               <p className="text-xs uppercase tracking-[0.4em] text-primary">
-                Spiritual Guardian
+                Leadership &amp; Patronage
               </p>
               <h2 className="mt-4 font-serif text-3xl font-light md:text-4xl">
-                His Holiness the Je Khenpo
+                Guided by Throne and Dharma
               </h2>
-              <div className="mt-6 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                <p>
-                  Respectfully addressed in Bhutan as Chapjey, the Je Khenpo is
-                  the Chief Abbot of the Central Monastic Body and the senior
-                  religious hierarch of the Kingdom. His role embodies the
-                  spiritual heart of Bhutan, guiding the nation’s monastic
-                  community and safeguarding its Dharma traditions.
-                </p>
-                <p>
-                  Alongside His Majesty the King, the Je Khenpo is the only
-                  figure in Bhutan entitled to wear the saffron-coloured kabney,
-                  a mark of his position as the nation&apos;s foremost spiritual
-                  authority. This distinction marks his position as the nation’s
-                  foremost spiritual authority, symbolizing both his
-                  responsibility and his revered status.
-                </p>
-                <p>
-                  The Buddha Dordenma stands today with the sanction of His
-                  Holiness the 70th Je Khenpo, Chabje Trulku Jigme Chhoeda,
-                  whose blessing, together with royal approval allowed the
-                  ancient prophecy of Wangpar Tsam to move from vision to
-                  groundbreaking in 2005.
-                </p>
-                <p>
-                  Through his continued guidance, Kuenselphodrang remains first
-                  and foremost a living centre of Dharma and devotion. The Je
-                  Khenpo’s presence ensures that the site is not only a monument
-                  of prophecy but also a sanctuary where spiritual practice
-                  thrives under the highest religious authority of Bhutan.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* His Majesty the King Section */}
-      <section
-        id="his-majesty"
-        className="bg-muted py-24 md:py-32 scroll-mt-24"
-      >
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-16 items-start">
-            <div className="lg:order-1">
-              <p className="text-xs uppercase tracking-[0.4em] text-primary">
-                Royal Patronage
+              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+                The Buddha Dordenma stands today under the continued patronage
+                of His Majesty The Fifth King and the spiritual guidance of
+                His Holiness the Je Khenpo. Discover the royal and religious
+                leadership that carried this monument from prophecy to
+                permanence, and continues to sustain it today.
               </p>
-              <h2 className="mt-4 font-serif text-3xl font-light md:text-4xl">
-                His Majesty The Fifth King
-              </h2>
-              <div className="mt-6 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                <p>
-                  His Majesty King Jigme Khesar Namgyel Wangchuck, the Fifth
-                  Druk Gyalpo of Bhutan, carries forward the royal patronage
-                  that first blessed the Buddha Dordenma at its groundbreaking
-                  under His Majesty the Fourth Druk Gyalpo in 2005. His
-                  leadership continues to embody the vision of peace and
-                  spiritual prosperity that the monument represents.
-                </p>
-                <p>
-                  Reigning since December 2006 and formally crowned in November
-                  2008, His Majesty is warmly regarded by the Bhutanese people
-                  as the &quot;People&apos;s King.&quot; His reign has been
-                  marked by compassion, humility, and a deep commitment to the
-                  welfare of the nation, strengthening the bond between the
-                  Golden Throne and the people.
-                </p>
-                <p>
-                  The devotion of the Royal Family to Kuenselphodrang is woven
-                  into the site itself. The surrounding Kuenselphodrang Nature
-                  Park was formally opened in 2011 in celebration of the Royal
-                  Wedding of His Majesty the Fifth King and Her Majesty The
-                  Gyaltsuen Jetsun Pema Wangchuck. This act forever linked the
-                  sanctuary to the joy and blessings of the Golden Throne,
-                  making the Buddha Dordenma not only a monument of prophecy but
-                  also a living testament to Bhutan’s royal legacy.
-                </p>
-              </div>
             </div>
-
-            <div className="lg:order-2">
-              <div className="overflow-hidden rounded-2xl border border-border bg-background shadow-[0_18px_45px_rgba(47,29,20,0.08)]">
-                <div className="p-4 sm:p-5">
-                  <div className="relative aspect-4/5 overflow-hidden rounded-xl bg-muted">
-                    <Image
-                      src="/images/king-jigme-khesar.png"
-                      alt="His Majesty King Jigme Khesar Namgyel Wangchuck, the Fifth Druk Gyalpo of Bhutan"
-                      fill
-                      className="object-cover object-center"
-                      sizes="(max-width: 1024px) 100vw, 320px"
-                    />
-                  </div>
-
-                  <div className="px-2 pb-2 pt-6 text-center">
-                    <h3 className="font-serif text-xl font-semibold text-foreground">
-                      Jigme Khesar Namgyel Wangchuck
-                    </h3>
-                    <p className="mt-2 text-sm font-medium text-primary">
-                      The Fifth Druk Gyalpo
-                    </p>
-                    <div className="mt-5 flex flex-wrap justify-center gap-2">
-                      <span className="rounded-full border border-border bg-muted px-3 py-1.5 text-xs font-semibold tracking-wide text-muted-foreground">
-                        Crowned 2008
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Link
+              href="/leadership"
+              className="inline-flex shrink-0 items-center justify-center gap-2 bg-primary px-8 py-4 text-center text-sm font-medium tracking-wide text-primary-foreground transition-all hover:bg-primary/90"
+            >
+              Leadership &amp; Patronage
+            </Link>
           </div>
         </div>
       </section>

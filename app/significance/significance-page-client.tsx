@@ -402,7 +402,7 @@ export default function SignificancePage() {
       </section>
 
       {/* Rituals & Spiritual Participation Section */}
-      <section className="py-24 md:py-32">
+      <section id="rituals" className="py-24 md:py-32 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-16">
             <p className="text-xs uppercase tracking-[0.4em] text-primary">
