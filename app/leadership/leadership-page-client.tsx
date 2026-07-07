@@ -7,6 +7,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { ScrollProgress } from "@/components/scroll-progress";
+import { SectionNav } from "@/components/section-nav";
+import { BackToTop } from "@/components/back-to-top";
+
+const sectionLinks = [
+  { href: "#his-majesty", label: "His Majesty The King" },
+  { href: "#je-khenpo", label: "The Je Khenpo" },
+];
 
 export default function LeadershipPageClient() {
   const pageRef = useRef<HTMLElement>(null);
@@ -42,7 +50,8 @@ export default function LeadershipPageClient() {
   }, []);
 
   return (
-    <main ref={pageRef} className="bg-background">
+    <main id="main-content" ref={pageRef} className="bg-background">
+      <ScrollProgress />
       <Header />
 
       {/* Hero Section */}
@@ -64,7 +73,15 @@ export default function LeadershipPageClient() {
               const angle = (i * Math.PI) / 4;
               const x2 = 50 + 46 * Math.cos(angle);
               const y2 = 50 + 46 * Math.sin(angle);
-              return <line key={i} x1="50" y1="50" x2={x2} y2={y2} />;
+              return (
+                <line
+                  key={i}
+                  x1="50"
+                  y1="50"
+                  x2={x2}
+                  y2={y2}
+                />
+              );
             })}
           </svg>
         </div>
@@ -80,27 +97,26 @@ export default function LeadershipPageClient() {
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
               Bhutan has long been sustained by chhoe-sid-nyi, the dual system
               of spiritual and temporal governance. The Buddha Dordenma stands
-              today as living proof of this union; raised under royal command
-              and consecrated under religious authority. This page honours the
-              two pillars of leadership behind Kuenselphodrang.
+              today as living proof of this union &mdash; raised under royal
+              command and consecrated under religious authority. This page
+              honours the two pillars of leadership behind Kuenselphodrang.
             </p>
           </div>
         </div>
       </section>
 
+      <SectionNav links={sectionLinks} />
+
       {/* His Majesty the King Section — ranked first */}
       <section
         id="his-majesty"
-        className="relative overflow-hidden bg-secondary py-20 text-[#fff7f0] md:py-28 scroll-mt-24"
+        className="relative overflow-hidden bg-secondary py-20 text-[#fff7f0] md:py-28 scroll-mt-36"
       >
         <div className="pointer-events-none absolute left-0 top-0 h-28 w-28 border-l-2 border-t-2 border-primary/35 sm:h-40 sm:w-40" />
         <div className="pointer-events-none absolute bottom-0 right-0 h-28 w-28 border-b-2 border-r-2 border-primary/35 sm:h-40 sm:w-40" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div
-            data-reveal
-            className="mb-14 text-center transition-all duration-700"
-          >
+          <div data-reveal className="mb-14 text-center transition-all duration-700">
             <p className="text-[0.7rem] font-semibold uppercase tracking-[0.45em] text-primary">
               Royal Patronage
             </p>
@@ -161,20 +177,20 @@ export default function LeadershipPageClient() {
                   spiritual prosperity that the monument represents.
                 </p>
                 <p>
-                  Reigning since December 2006 and formally crowned in November
-                  2008, His Majesty is warmly regarded by the Bhutanese people
-                  as the &quot;People&apos;s King.&quot; His reign has been
-                  marked by compassion, humility, and a deep commitment to the
-                  welfare of the nation, strengthening the bond between the
-                  Golden Throne and the people.
+                  Reigning since December 2006 and formally crowned in
+                  November 2008, His Majesty is warmly regarded by the
+                  Bhutanese people as the &quot;People&apos;s King.&quot; His
+                  reign has been marked by compassion, humility, and a deep
+                  commitment to the welfare of the nation, strengthening the
+                  bond between the Golden Throne and the people.
                 </p>
                 <p>
                   The devotion of the Royal Family to Kuenselphodrang is woven
                   into the site itself. The surrounding Kuenselphodrang Nature
                   Park was formally opened in 2011 in celebration of the Royal
                   Wedding of His Majesty the Fifth King and Her Majesty The
-                  Gyaltsuen Jetsun Pema Wangchuck; forever linking the sanctuary
-                  to the joy and blessings of the Golden Throne.
+                  Gyaltsuen Jetsun Pema Wangchuck &mdash; forever linking the
+                  sanctuary to the joy and blessings of the Golden Throne.
                 </p>
               </div>
             </div>
@@ -190,15 +206,15 @@ export default function LeadershipPageClient() {
             className="text-sm italic leading-relaxed text-muted-foreground transition-all duration-700 sm:text-base"
           >
             In the Bhutanese tradition of chhoe-sid-nyi, the throne and the
-            monastic body govern in tandem; one upholding the temporal welfare
-            of the nation, the other its spiritual wellbeing. Together, they
-            have carried the Buddha Dordenma from prophecy to permanence.
+            monastic body govern in tandem &mdash; one upholding the temporal
+            welfare of the nation, the other its spiritual wellbeing. Together,
+            they have carried the Buddha Dordenma from prophecy to permanence.
           </p>
         </div>
       </section>
 
       {/* His Holiness the Je Khenpo Section */}
-      <section id="je-khenpo" className="py-20 md:py-28 scroll-mt-24">
+      <section id="je-khenpo" className="py-20 md:py-28 scroll-mt-36">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid items-start gap-12 lg:grid-cols-[320px_minmax(0,1fr)] lg:gap-16">
             <div data-reveal className="transition-all duration-700">
@@ -246,14 +262,14 @@ export default function LeadershipPageClient() {
                   Respectfully addressed in Bhutan as Chapjey, the Je Khenpo is
                   the Chief Abbot of the Central Monastic Body and the senior
                   religious hierarch of the Kingdom. His role embodies the
-                  spiritual heart of Bhutan, guiding the nation&apos;s monastic
-                  community and safeguarding its Dharma traditions.
+                  spiritual heart of Bhutan, guiding the nation&apos;s
+                  monastic community and safeguarding its Dharma traditions.
                 </p>
                 <p>
                   Alongside His Majesty the King, the Je Khenpo is the only
-                  figure in Bhutan entitled to wear the saffron-coloured kabney,
-                  a mark of his position as the nation&apos;s foremost spiritual
-                  authority.
+                  figure in Bhutan entitled to wear the saffron-coloured
+                  kabney, a mark of his position as the nation&apos;s foremost
+                  spiritual authority.
                 </p>
                 <p>
                   The Buddha Dordenma stands today with the sanction of His
@@ -263,10 +279,10 @@ export default function LeadershipPageClient() {
                   groundbreaking in 2005.
                 </p>
                 <p>
-                  Through his continued guidance, Kuenselphodrang remains first
-                  and foremost a living centre of Dharma and devotion; a
-                  sanctuary where spiritual practice thrives under the highest
-                  religious authority of Bhutan.
+                  Through his continued guidance, Kuenselphodrang remains
+                  first and foremost a living centre of Dharma and devotion
+                  &mdash; a sanctuary where spiritual practice thrives under
+                  the highest religious authority of Bhutan.
                 </p>
               </div>
             </div>
@@ -293,9 +309,9 @@ export default function LeadershipPageClient() {
             data-reveal
             className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground transition-all duration-700 sm:text-base"
           >
-            Discover the full story of the Buddha Dordenma, or dedicate a small
-            act of devotion; a lamp, a khadar, a prayer; in honour of their long
-            life and continued guidance.
+            Discover the full story of the Buddha Dordenma, or dedicate a
+            small act of devotion &mdash; a lamp, a khadar, a prayer &mdash;
+            in honour of their long life and continued guidance.
           </p>
           <div
             data-reveal
@@ -318,6 +334,7 @@ export default function LeadershipPageClient() {
       </section>
 
       <Footer />
+      <BackToTop />
     </main>
   );
 }

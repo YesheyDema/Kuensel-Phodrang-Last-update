@@ -1,5 +1,3 @@
-/** @format */
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -52,10 +50,14 @@ export function Header() {
                 className="h-12 w-auto object-contain"
               />
               <div className="hidden flex-col transition-transform duration-200 group-hover:scale-[1.02] md:flex">
-                <span className="font-serif text-xl font-semibold tracking-wide text-secondary-foreground transition-colors">
+                <span
+                  className="font-serif text-xl font-semibold tracking-wide text-secondary-foreground transition-colors"
+                >
                   Buddha Dordenma
                 </span>
-                <span className="text-[10px] uppercase tracking-[0.3em] text-secondary-foreground/70 transition-colors">
+                <span
+                  className="text-[10px] uppercase tracking-[0.3em] text-secondary-foreground/70 transition-colors"
+                >
                   Thimphu, Bhutan
                 </span>
               </div>
@@ -123,9 +125,7 @@ export function Header() {
             <div
               key={link.href}
               className="transition-all duration-300"
-              style={{
-                transitionDelay: isMobileMenuOpen ? `${index * 80}ms` : "0ms",
-              }}
+              style={{ transitionDelay: isMobileMenuOpen ? `${index * 80}ms` : "0ms" }}
             >
               <Link
                 href={link.href}

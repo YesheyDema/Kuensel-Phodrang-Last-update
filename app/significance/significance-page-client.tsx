@@ -7,6 +7,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { BackToTop } from "@/components/back-to-top";
+import { ScrollProgress } from "@/components/scroll-progress";
 
 const floors = [
   {
@@ -144,6 +146,7 @@ export default function SignificancePage() {
   const [activeMode, setActiveMode] = useState<ParticipationMode>("lamp");
   const [floatingPrayers, setFloatingPrayers] = useState<FloatingPrayer[]>([]);
   const [sparkCount, setSparkCount] = useState(0);
+  const [dedicationText, setDedicationText] = useState("");
 
   const handleParticipation = (mode: ParticipationMode) => {
     setActiveMode(mode);
@@ -164,7 +167,11 @@ export default function SignificancePage() {
     ];
 
     const prayerId = Date.now() + Math.random();
-    const prayer = prayers[Math.floor(Math.random() * prayers.length)];
+    const customText = dedicationText.trim();
+    const prayer =
+      customText.length > 0
+        ? customText
+        : prayers[Math.floor(Math.random() * prayers.length)];
 
     setFloatingPrayers((current) => [
       ...current,
@@ -177,7 +184,8 @@ export default function SignificancePage() {
   };
 
   return (
-    <main className="bg-background">
+    <main id="main-content" className="bg-background">
+      <ScrollProgress />
       <Header />
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 md:pt-40 md:pb-32">
@@ -462,6 +470,31 @@ export default function SignificancePage() {
                     </motion.button>
                   );
                 })}
+              </div>
+
+              <div className="mt-8 border-t border-border pt-6">
+                <label
+                  htmlFor="dedication-input"
+                  className="text-xs uppercase tracking-[0.35em] text-primary/80"
+                >
+                  Dedicate Your Prayer <span className="normal-case tracking-normal text-muted-foreground">(optional)</span>
+                </label>
+                <input
+                  id="dedication-input"
+                  type="text"
+                  value={dedicationText}
+                  onChange={(event) =>
+                    setDedicationText(event.target.value.slice(0, 80))
+                  }
+                  placeholder="e.g. For my family's health and happiness"
+                  maxLength={80}
+                  className="mt-3 w-full rounded-full border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                />
+                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                  Write an intention, then choose &quot;Send a Prayer&quot; to
+                  let it drift skyward. Nothing you type is stored or shared
+                  &mdash; it stays with you, for this quiet moment.
+                </p>
               </div>
             </div>
 
@@ -782,6 +815,7 @@ export default function SignificancePage() {
       </section>
 
       <Footer />
+      <BackToTop />
     </main>
   );
 }

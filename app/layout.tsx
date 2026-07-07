@@ -78,11 +78,42 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    name: "Buddha Dordenma",
+    alternateName: "Kuenselphodrang Buddha Statue",
+    description:
+      "The Buddha Dordenma is one of the largest statues of Buddha in the world, situated in the mountains of Thimphu, Bhutan. It houses 125,000 smaller Buddha statues within its structure.",
+    image: "https://kuenselphodrang.org/images/hero-image.png",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Thimphu",
+      addressCountry: "BT",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 27.4287,
+      longitude: 89.6339,
+    },
+    isAccessibleForFree: false,
+    publicAccess: true,
+  };
+
   return (
     <html lang="en" className="bg-background" data-scroll-behavior="smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
       <body
         className={`${inter.variable} ${lato.variable} ${cormorant.variable} font-sans antialiased`}
       >
+        <a href="#main-content" className="skip-to-content">
+          Skip to main content
+        </a>
         <DonationsProvider>
           {children}
         </DonationsProvider>

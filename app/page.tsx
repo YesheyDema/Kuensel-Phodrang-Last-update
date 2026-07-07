@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { BackToTop } from "@/components/back-to-top";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -23,7 +24,7 @@ const stagger = {
 
 export default function Home() {
   return (
-    <main className="bg-background">
+    <main id="main-content" className="bg-background">
       <Header />
 
       {/* Hero Section */}
@@ -458,6 +459,7 @@ export default function Home() {
       </section>
 
       <Footer />
+      <BackToTop />
     </main>
   );
 }

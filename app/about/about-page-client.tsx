@@ -7,6 +7,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { ScrollProgress } from "@/components/scroll-progress";
+import { SectionNav } from "@/components/section-nav";
+import { BackToTop } from "@/components/back-to-top";
+
+const sectionLinks = [
+  { href: "#monument", label: "The Monument" },
+  { href: "#interior", label: "Sacred Interior" },
+  { href: "#timeline", label: "Timeline" },
+  { href: "#founder", label: "The Founder" },
+  { href: "#statues", label: "Statues" },
+];
 
 const facts = [
   { label: "Height", value: "169 feet", detail: "about 51.5 meters" },
@@ -78,10 +89,10 @@ const timeline = [
 ];
 
 export default function AboutPage() {
-  const founderSectionRef = useRef<HTMLElement>(null);
+  const pageRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const section = founderSectionRef.current;
+    const section = pageRef.current;
     if (!section) return;
 
     const revealTargets = Array.from(section.querySelectorAll("[data-reveal]"));
@@ -111,13 +122,14 @@ export default function AboutPage() {
   }, []);
 
   return (
-    <main className="bg-background">
+    <main id="main-content" ref={pageRef} className="bg-background">
+      <ScrollProgress />
       <Header />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 md:pt-40 md:pb-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="max-w-3xl">
+          <div data-reveal className="max-w-3xl transition-all duration-700">
             <p className="text-xs uppercase tracking-[0.4em] text-primary">
               The Complete Story
             </p>
@@ -132,6 +144,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <SectionNav links={sectionLinks} />
 
       {/* Key Figures */}
       <section className="border-y border-border py-16 md:py-20">
@@ -167,9 +181,9 @@ export default function AboutPage() {
       </section>
 
       {/* The Monument Section */}
-      <section className="py-24 md:py-32">
+      <section id="monument" className="py-24 md:py-32 scroll-mt-36">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-16">
+          <div data-reveal className="mb-16 transition-all duration-700">
             <p className="text-xs uppercase tracking-[0.4em] text-primary">
               The Monument
             </p>
@@ -233,9 +247,9 @@ export default function AboutPage() {
       </section>
 
       {/* Sacred Interior Section */}
-      <section className="bg-muted py-24 md:py-32">
+      <section id="interior" className="bg-muted py-24 md:py-32 scroll-mt-36">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-16">
+          <div data-reveal className="mb-16 transition-all duration-700">
             <p className="text-xs uppercase tracking-[0.4em] text-primary">
               The Interior
             </p>
@@ -272,9 +286,9 @@ export default function AboutPage() {
       <div id="monastic" className="sr-only" aria-hidden="true" />
 
       {/* Timeline Section */}
-      <section id="timeline" className="py-24 md:py-32">
+      <section id="timeline" className="py-24 md:py-32 scroll-mt-36">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-16">
+          <div data-reveal className="mb-16 transition-all duration-700">
             <p className="text-xs uppercase tracking-[0.4em] text-primary">
               Through the Ages
             </p>
@@ -289,16 +303,21 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="space-y-12">
+          <div className="space-y-10">
             {timeline.map((item, index) => (
               <div
                 key={item.year}
-                className="grid gap-6 md:grid-cols-[150px_1fr] md:gap-12"
+                data-reveal
+                className="grid gap-6 transition-all duration-700 md:grid-cols-[150px_1fr] md:gap-12"
               >
                 <div className="text-primary">
                   <p className="font-serif text-xl font-light">{item.year}</p>
                 </div>
-                <div className="border-l border-border pl-6 md:pl-12">
+                <div className="relative border-l border-border pl-6 md:pl-12">
+                  <span
+                    className="absolute -left-[5px] top-1.5 h-[9px] w-[9px] rounded-full bg-primary ring-4 ring-background"
+                    aria-hidden="true"
+                  />
                   <h3 className="font-serif text-lg">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                     {item.description}
@@ -312,9 +331,8 @@ export default function AboutPage() {
 
       {/* The Founder Section */}
       <section
-        ref={founderSectionRef}
         id="founder"
-        className="relative overflow-hidden bg-secondary py-24 text-[#fff7f0] md:py-32 scroll-mt-24"
+        className="relative overflow-hidden bg-secondary py-24 text-[#fff7f0] md:py-32 scroll-mt-36"
       >
         <div className="pointer-events-none absolute left-0 top-0 h-28 w-28 border-l-2 border-t-2 border-primary/35 sm:h-40 sm:w-40" />
         <div className="pointer-events-none absolute bottom-0 right-0 h-28 w-28 border-b-2 border-r-2 border-primary/35 sm:h-40 sm:w-40" />
@@ -437,8 +455,8 @@ export default function AboutPage() {
               </h2>
               <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
                 The Buddha Dordenma stands today under the continued patronage
-                of His Majesty The Fifth King and the spiritual guidance of
-                His Holiness the Je Khenpo. Discover the royal and religious
+                of His Majesty The Fifth King and the spiritual guidance of His
+                Holiness the Je Khenpo. Discover the royal and religious
                 leadership that carried this monument from prophecy to
                 permanence, and continues to sustain it today.
               </p>
@@ -454,9 +472,12 @@ export default function AboutPage() {
       </section>
 
       {/* Statues of Devotion Section */}
-      <section id="statues" className="py-24 md:py-32 scroll-mt-24">
+      <section id="statues" className="py-24 md:py-32 scroll-mt-36">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-16 text-center">
+          <div
+            data-reveal
+            className="mb-16 text-center transition-all duration-700"
+          >
             <p className="text-xs uppercase tracking-[0.4em] text-primary">
               Statues of Devotion
             </p>
@@ -560,6 +581,7 @@ export default function AboutPage() {
       </section>
 
       <Footer />
+      <BackToTop />
     </main>
   );
 }

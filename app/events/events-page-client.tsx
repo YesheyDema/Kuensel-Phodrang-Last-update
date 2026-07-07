@@ -3,6 +3,7 @@
 import { Globe, Sun } from "lucide-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { BackToTop } from "@/components/back-to-top";
 
 const ceremonies = [
   {
@@ -59,7 +60,7 @@ const aspirations = [
 
 export default function EventsPageClient() {
   return (
-    <main className="bg-background">
+    <main id="main-content" className="bg-background">
       <Header />
 
       <section className="border-b border-border/60 pt-32 pb-20 md:pt-40 md:pb-24">
@@ -173,6 +174,7 @@ export default function EventsPageClient() {
       </section>
 
       <Footer />
+      <BackToTop />
     </main>
   );
 }
